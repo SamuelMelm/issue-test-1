@@ -24,6 +24,7 @@ jobs:
         uses: actions/configure-pages@v3
         with:
           enablement: true
+          token: ${{ secrets.PAGES_TOKEN }}
 
       - name: Upload file
         uses: actions/upload-pages-artifact@v1
@@ -33,3 +34,5 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
+        with:
+          token: ${{ secrets.PAGES_TOKEN }}
